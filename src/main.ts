@@ -33,7 +33,11 @@ async function run() {
   if (disableBodyRead !== 1) {
     issue_body = getIssueOrPRBody();
   }
-  const issue_title = getIssueOrPRTitle();
+
+  let issue_title;
+  if (includeTitle === 1) {
+    issue_title = getIssueOrPRTitle();
+  }
 
   if (!issue_title || !issue_body) {
     console.log("Could not get issue or PR title or body from context, exiting");
