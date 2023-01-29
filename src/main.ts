@@ -23,14 +23,6 @@ async function run() {
   const disableRemoveLabels = parseInt(getInput("disable-remove-labels", { required: false }));
   const disableBodyRead = parseInt(getInput("disable-body-read", { required: false }));
 
-  console.log('enableVersionedRegex: ', enableVersionedRegex)
-  console.log('versionedRegex: ', versionedRegex)
-  console.log('notBefore: ', notBefore)
-  console.log('bodyMissingRegexLabel: ', bodyMissingRegexLabel)
-  console.log('includeTitle: ', includeTitle)
-  console.log('disableRemoveLabels: ', disableRemoveLabels)
-  console.log('disableBodyRead: ', disableBodyRead)
-
   const issue_number = getIssueOrPRNumber();
   if (issue_number === undefined) {
     console.log("Could not get issue or PR number from context, exiting");
